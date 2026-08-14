@@ -1,0 +1,14 @@
+{
+  "name": "draftation",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "start": "pnpm -r --parallel start"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
+}

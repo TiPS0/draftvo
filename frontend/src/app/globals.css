@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   Design Tokens — from log-ui.md
+   ───────────────────────────────────────── */
+
+:root {
+  /* Text */
+  --color-text-primary: #2c2c2b;
+  --color-text-secondary: #5f5e59;
+  --color-text-tertiary: #7d7a75;
+
+  /* Surfaces */
+  --color-surface-base: #000000;
+  --color-surface-muted: #ffffff;
+  --color-surface-raised: #211b17;
+  --color-surface-strong: #2783de;
+
+  /* Background / Foreground (Tailwind compat) */
+  --background: #f5f4f2;
+  --foreground: #2c2c2b;
+
+  /* Spacing */
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 5px;
+  --space-4: 6px;
+  --space-5: 8px;
+  --space-6: 10px;
+  --space-7: 12px;
+
+  /* Typography */
+  --font-family-primary: ui-sans-serif;
+  --font-family-stack: ui-sans-serif, -apple-system, system-ui,
+    "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji",
+    "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif,
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 32px;
+  --font-weight-base: 500;
+  --line-height-base: 24px;
+
+  /* Radius */
+  --radius-xs: 6px;
+  --radius-sm: 16px;
+  --radius-md: 100px;
+  --radius-lg: 999px;
+  --radius-xl: 9999px;
+
+  /* Shadows */
+  --shadow-1: rgba(25, 25, 25, 0.027) 0px 8px 12px 0px,
+    rgba(25, 25, 25, 0.027) 0px 2px 6px 0px,
+    rgba(42, 28, 0, 0.07) 0px 0px 0px 1px;
+  --shadow-2: rgb(240, 239, 237) -1px 0px 0px 0px inset;
+
+  /* Motion */
+  --motion-instant: 20ms;
+  --motion-fast: 100ms;
+  --motion-normal: 150ms;
+  --motion-slow: 200ms;
+  --motion-slower: 250ms;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ─────────────────────────────────────────
+   Base
+   ───────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background: var(--background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-stack);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus-visible default (WCAG 2.2 AA) */
+:focus-visible {
+  outline: 2px solid var(--color-surface-strong);
+  outline-offset: 2px;
+}
