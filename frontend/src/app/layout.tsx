@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 import { ThemeProvider } from "./_components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Draftation",
+  title: "Draftvo",
   description: "Your personal task dashboard",
 };
 

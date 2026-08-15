@@ -11,7 +11,7 @@ tags: ["architecture", "core", "monorepo"]
 
 ## 1. Overview
 
-Draftation is a monorepo consisting of two primary domains:
+Draftvo is a monorepo consisting of two primary domains:
 1. **Frontend**: A React application built with Next.js (App Router), Tailwind CSS v4, and TypeScript.
 2. **Backend**: A lightweight Go API that handles data storage and authentication.
 
@@ -30,7 +30,7 @@ _List the hard rules that human developers and AI agents MUST follow when workin
 ## 3. Diagram / Structure
 
 ```
-draftation/
+draftvo/
 ├── frontend/             # Next.js Application
 │   ├── src/app/          # App Router (Pages, Layouts, Server Components)
 │   │   ├── (main)/       # Authenticated Dashboard Layout

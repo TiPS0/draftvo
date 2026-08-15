@@ -211,6 +211,6 @@ func main() {
 		port = "8080"
 	}
 
-	fmt.Printf("Draftation backend listening on :%s\n", port)
+	fmt.Printf("Draftvo backend listening on :%s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }

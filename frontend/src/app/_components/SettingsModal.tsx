@@ -86,7 +86,7 @@ export function SettingsModal({ isOpen, onClose, userName = "You" }: SettingsMod
             {activeTab === 'preferences' ? (
               <div className="max-w-[700px]">
                 <h1 className="text-[22px] font-bold text-[var(--color-text-primary)] mb-1">Preferences</h1>
-                <p className="text-[14px] text-[var(--color-text-secondary)] mb-10 border-b border-[var(--color-surface-raised)] pb-6">Choose how you want Draftation to look and behave</p>
+                <p className="text-[14px] text-[var(--color-text-secondary)] mb-10 border-b border-[var(--color-surface-raised)] pb-6">Choose how you want Draftvo to look and behave</p>
 
                 {/* Appearance */}
                 <div className="mb-8 border-b border-[var(--color-surface-raised)] pb-8">
@@ -95,7 +95,7 @@ export function SettingsModal({ isOpen, onClose, userName = "You" }: SettingsMod
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-[14px] font-medium text-[var(--color-text-primary)]">Theme</div>
-                      <div className="text-[13px] text-[var(--color-text-secondary)]">Choose a theme for Draftation on this device</div>
+                      <div className="text-[13px] text-[var(--color-text-secondary)]">Choose a theme for Draftvo on this device</div>
                     </div>
                     <select 
                       className="border border-[var(--color-surface-raised)] rounded text-[13px] px-2 py-1 outline-none focus:border-gray-300 bg-[var(--color-surface-muted)]"
@@ -131,7 +131,7 @@ export function SettingsModal({ isOpen, onClose, userName = "You" }: SettingsMod
                   <div className="flex items-center justify-between mb-6">
                     <div>
                       <div className="text-[14px] font-medium text-[var(--color-text-primary)]">Language</div>
-                      <div className="text-[13px] text-[var(--color-text-secondary)]">Choose the language you want to use Draftation in</div>
+                      <div className="text-[13px] text-[var(--color-text-secondary)]">Choose the language you want to use Draftvo in</div>
                     </div>
                     <select className="border border-[var(--color-surface-raised)] rounded text-[13px] px-2 py-1 outline-none focus:border-gray-300">
                       <option>English (US)</option>

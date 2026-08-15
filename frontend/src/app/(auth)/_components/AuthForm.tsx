@@ -14,9 +14,9 @@ export function AuthForm({ title, subtitle, children }: AuthFormProps) {
     >
       {/* Logo mark */}
       <div className="flex items-center gap-2 mb-8">
-        <DraftationLogo />
+        <DraftvoLogo />
         <span className="text-[var(--font-size-md)] font-[600] text-[var(--color-text-primary)] tracking-tight">
-          Draftation
+          Draftvo
         </span>
       </div>
 
@@ -35,7 +35,7 @@ export function AuthForm({ title, subtitle, children }: AuthFormProps) {
   );
 }
 
-function DraftationLogo() {
+function DraftvoLogo() {
   return (
     <svg
       width="28"

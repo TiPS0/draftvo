@@ -43,10 +43,10 @@ export function Sidebar({ activePath = "/", userName = "You", userEmail = "", on
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 hover:bg-black/5 p-1 rounded cursor-pointer transition-colors">
             <div className="w-5 h-5 rounded overflow-hidden relative">
-              <DraftationLogo />
+              <DraftvoLogo />
             </div>
             <span className="text-[var(--font-size-sm)] font-[500] text-[var(--color-text-primary)] truncate max-w-[150px]">
-              Draftation
+              Draftvo
             </span>
           </div>
           <button
@@ -147,7 +147,7 @@ export function Sidebar({ activePath = "/", userName = "You", userEmail = "", on
 
 /* ── Icons ──────────────────────────────── */
 
-function DraftationLogo() {
+function DraftvoLogo() {
   return (
     <svg width="100%" height="100%" viewBox="0 0 28 28" fill="none" aria-hidden="true">
       <rect width="28" height="28" fill="#211b17" />

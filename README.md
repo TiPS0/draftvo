@@ -1,6 +1,6 @@
 <div align="center">
 
-# Draftation
+# Draftvo
 
 **The unified workspace bridging technical and non-technical workflows.**
 
@@ -8,7 +8,7 @@
 
 ---
 
-Draftation is a workspace tailored for cross-functional teams to store documents, manage data, write API specifications, plan via calendars, and communicate seamlessly with external stakeholders (vendors, outsourcers, leadership) via PDF exports and integrated email.
+Draftvo is a workspace tailored for cross-functional teams to store documents, manage data, write API specifications, plan via calendars, and communicate seamlessly with external stakeholders (vendors, outsourcers, leadership) via PDF exports and integrated email.
 
 ## ✨ Core Feature Pillars
 
@@ -45,8 +45,8 @@ This project is structured as a **Monorepo** using `pnpm` workspaces:
 1. Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/draftation.git
-cd draftation
+git clone https://github.com/YOUR_USERNAME/draftvo.git
+cd draftvo
 pnpm install
 ```
 

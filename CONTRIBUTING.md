@@ -1,4 +1,4 @@
-# Contributing to Draftation
+# Contributing to Draftvo
 
 Thank you for taking the time to contribute! 🎉
 This guide will help you get started quickly with our monorepo.
@@ -26,11 +26,11 @@ This guide will help you get started quickly with our monorepo.
 
 ```bash
 # 1. Fork the repo on GitHub, then clone your fork
-git clone https://github.com/YOUR_USERNAME/draftation.git
-cd draftation
+git clone https://github.com/YOUR_USERNAME/draftvo.git
+cd draftvo
 
 # 2. Add the upstream remote
-git remote add upstream https://github.com/TiPS0/draftation.git
+git remote add upstream https://github.com/TiPS0/draftvo.git
 
 # 3. Install dependencies across the monorepo
 pnpm install
@@ -41,7 +41,7 @@ pnpm install
 ## Project Structure
 
 ```text
-draftation/
+draftvo/
 ├── frontend/                  # Next.js 16 application (React 19, Tailwind v4)
 ├── backend/                   # Go API server (handles JWT auth & users.json)
 ├── docs/                      # AI-optimized documentation

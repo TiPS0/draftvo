@@ -1,11 +1,11 @@
 /**
- * Lightweight JWT helpers for the Draftation auth layer.
+ * Lightweight JWT helpers for the Draftvo auth layer.
  *
  * We use the Web Crypto API (available in Next.js Edge & Node runtimes)
  * to sign and verify HS256 JWTs without any npm dependency.
  */
 
-const SECRET = process.env.AUTH_SECRET ?? "draftation-dev-secret-change-me";
+const SECRET = process.env.AUTH_SECRET ?? "draftvo-dev-secret-change-me";
 
 function base64url(input: ArrayBuffer | Uint8Array): string {
   const bytes = input instanceof ArrayBuffer ? new Uint8Array(input) : input;
@@ -84,4 +84,4 @@ export async function verifyJwt(token: string): Promise<JwtPayload | null> {
   }
 }
 
-export const SESSION_COOKIE = "draftation_session";
+export const SESSION_COOKIE = "draftvo_session";

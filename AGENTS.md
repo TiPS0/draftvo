@@ -5,7 +5,7 @@
 
 ## Project
 
-- **Name:** draftation
+- **Name:** draftvo
 
 ## Agent Configuration
 

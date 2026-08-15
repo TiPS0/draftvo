@@ -42,7 +42,3 @@ backend/backend
 # Test coverage
 coverage/
 .nyc_output/
-
-# agentive (https://github.com/TiPS0/agentive)
-.agents/
-.aiignore

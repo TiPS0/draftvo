@@ -40,7 +40,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           <SearchIcon className="w-5 h-5 text-gray-400 shrink-0" />
           <input 
             type="text" 
-            placeholder="Search or ask a question in Draftation..."
+            placeholder="Search or ask a question in Draftvo..."
             className="flex-1 bg-transparent border-none outline-none px-3 text-[var(--color-text-primary)] placeholder:text-gray-400 text-[15px]"
             autoFocus
           />
