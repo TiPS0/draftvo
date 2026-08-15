@@ -82,7 +82,7 @@ export function TaskBoard() {
                 "px-3 py-1.5 rounded-[var(--radius-xs)] text-[var(--font-size-sm)] transition-all duration-[var(--motion-normal)]",
                 "focus-visible:outline-2 focus-visible:outline-[var(--color-surface-strong)] focus-visible:outline-offset-1",
                 isActive
-                  ? "bg-white text-[var(--color-text-primary)] font-[600] shadow-[var(--shadow-1)]"
+                  ? "bg-[var(--color-surface-muted)] text-[var(--color-text-primary)] font-[600] shadow-[var(--shadow-1)]"
                   : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[rgba(42,28,0,0.04)]",
               ].join(" ")}
             >
@@ -107,7 +107,7 @@ export function TaskBoard() {
           <div
             key={task.id}
             className={[
-              "flex items-start gap-3 px-3.5 py-3 rounded-[var(--radius-xs)] bg-white group",
+              "flex items-start gap-3 px-3.5 py-3 rounded-[var(--radius-xs)] bg-[var(--color-surface-muted)] group",
               "border border-[rgba(42,28,0,0.07)] hover:border-[rgba(42,28,0,0.12)]",
               "transition-all duration-[var(--motion-normal)] shadow-sm",
             ].join(" ")}
@@ -151,7 +151,7 @@ export function TaskBoard() {
 
         {/* Add task row */}
         {addingTask ? (
-          <div className="flex items-center gap-2 px-3.5 py-2.5 rounded-[var(--radius-xs)] bg-white border border-[var(--color-surface-strong)] shadow-[0_0_0_3px_rgba(39,131,222,0.15)]">
+          <div className="flex items-center gap-2 px-3.5 py-2.5 rounded-[var(--radius-xs)] bg-[var(--color-surface-muted)] border border-[var(--color-surface-strong)] shadow-[0_0_0_3px_rgba(39,131,222,0.15)]">
             <input
               autoFocus
               type="text"

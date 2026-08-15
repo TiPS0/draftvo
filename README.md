@@ -8,18 +8,18 @@
 
 ---
 
-Draftation is a Notion-like workspace tailored for cross-functional teams to store documents, manage data, write API specifications, plan via calendars, and communicate seamlessly with external stakeholders (vendors, outsourcers, leadership) via PDF exports and integrated email.
+Draftation is a workspace tailored for cross-functional teams to store documents, manage data, write API specifications, plan via calendars, and communicate seamlessly with external stakeholders (vendors, outsourcers, leadership) via PDF exports and integrated email.
 
 ## ✨ Core Feature Pillars
 
-| Feature | Description |
-| :--- | :--- |
-| 📝 **The Workspace** | Block-based document editing, data file storage, and API spec rendering. |
-| 📅 **Calendar & Planning** | Visual calendar views linked to documents for project roadmapping. |
-| 📄 **The Export Engine** | High-quality, template-driven PDF generation designed for external communication. |
-| 📧 **Communication Hub** | Native email sending capabilities directly from the workspace to share docs or alerts. |
-| ⚡ **Workflow Automation** | Webhook architecture designed to connect natively with tools like n8n. |
-| 🔐 **Authentication** | Local n8n-style auth (email/password) stored via a Go backend to quickly bootstrap workspaces. |
+| Feature                    | Description                                                                                    |
+| :------------------------- | :--------------------------------------------------------------------------------------------- |
+| 📝 **The Workspace**       | Block-based document editing, data file storage, and API spec rendering.                       |
+| 📅 **Calendar & Planning** | Visual calendar views linked to documents for project roadmapping.                             |
+| 📄 **The Export Engine**   | High-quality, template-driven PDF generation designed for external communication.              |
+| 📧 **Communication Hub**   | Native email sending capabilities directly from the workspace to share docs or alerts.         |
+| ⚡ **Workflow Automation** | Webhook architecture designed to connect natively with tools like n8n.                         |
+| 🔐 **Authentication**      | Local n8n-style auth (email/password) stored via a Go backend to quickly bootstrap workspaces. |
 
 ---
 
@@ -43,6 +43,7 @@ This project is structured as a **Monorepo** using `pnpm` workspaces:
 ### Installation & Usage
 
 1. Clone the repository and install dependencies:
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/draftation.git
 cd draftation
@@ -50,6 +51,7 @@ pnpm install
 ```
 
 2. Start the development servers (runs both Frontend and Backend concurrently):
+
 ```bash
 pnpm dev
 ```

@@ -1,3 +1,12 @@
 {
-  "documents": []
+  "documents": [
+    "docs/architecture/monorepo.md",
+    "docs/changelog.md",
+    "docs/glossary.md",
+    "docs/grills/theme-selector.md",
+    "docs/plans/fix-auth-issues.md",
+    "docs/plans/sidebar-redesign-and-resize.md",
+    "docs/plans/theme-selector.md",
+    "docs/prompts/sidebar-logic-update.md"
+  ]
 }
