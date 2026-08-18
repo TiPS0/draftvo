@@ -94,9 +94,37 @@ Before doing anything else, evaluate the user's request complexity:
    **If updating existing:** overwrite the existing file, merging the old and new content. Preserve all sections that are still valid.
 
 4. **Halt and notify the user** (in the user's language):
-   - Thai example: `✅ แผนงานพร้อมแล้วที่ \`docs/plans/<feature-name>.md\` เริ่ม implement ได้เลยโดยพิมพ์: /agent-loop @[docs/plans/<feature-name>.md] start implement this`
-   - English example: `✅ Your prompt spec is ready at \`docs/plans/<feature-name>.md\`. To begin implementation, type: /agent-loop @[docs/plans/<feature-name>.md] start implement this`
-
+   Before giving the command to run, output a "What We Are Going to Do" section that lists the core steps, files to create/edit/fix, and the reasoning based on the generated implementation plan. Then, provide the final command.
+   
+   - English example:
+     ```markdown
+     ## What We Are Going to Do
+     
+     **1. [Task Name]**
+     - **Action**: We will modify `path/to/file.tsx` to do [x].
+     - **Why**: This solves [y] problem.
+     
+     **2. [Next Task Name]**
+     - **Action**: We will create a new file `path/to/newfile.tsx`.
+     - **Why**: This handles the new [z] requirement.
+     
+     If this aligns perfectly with what you want, you can trigger the automated implementation by typing: `/agent-loop @[docs/plans/<feature-name>.md] start implement this`
+     ```
+   
+   - Thai example:
+     ```markdown
+     ## สิ่งที่เรากำลังจะทำ (What We Are Going to Do)
+     
+     **1. [Task Name]**
+     - **Action**: เราจะแก้ไข `path/to/file.tsx` เพื่อทำ [x]
+     - **Why**: เพื่อแก้ปัญหา [y]
+     
+     **2. [Next Task Name]**
+     - **Action**: เราจะสร้างไฟล์ใหม่ที่ `path/to/newfile.tsx`
+     - **Why**: เพื่อรองรับฟีเจอร์ใหม่ [z]
+     
+     หากแผนงานนี้ตรงกับความต้องการของคุณ คุณสามารถเริ่มการทำงานอัตโนมัติได้โดยพิมพ์: `/agent-loop @[docs/plans/<feature-name>.md] start implement this`
+     ```
 ---
 
 ## 4A. Full Spec Template (For Complex Tasks)

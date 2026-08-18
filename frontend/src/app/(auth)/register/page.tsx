@@ -12,6 +12,7 @@ interface FormState {
   email: string;
   password: string;
   confirmPassword: string;
+  inviteToken: string;
 }
 
 interface FormErrors {
@@ -50,6 +51,7 @@ export default function RegisterPage() {
     email: "",
     password: "",
     confirmPassword: "",
+    inviteToken: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [loading, setLoading] = useState(false);
@@ -83,6 +85,7 @@ export default function RegisterPage() {
           name: values.name,
           email: values.email,
           password: values.password,
+          inviteToken: values.inviteToken,
         }),
       });
 
@@ -175,6 +178,16 @@ export default function RegisterPage() {
             value={values.confirmPassword}
             onChange={handleChange}
             error={errors.confirmPassword}
+            disabled={loading}
+          />
+
+          <Input
+            label="Invite token (optional for first user)"
+            name="inviteToken"
+            type="text"
+            placeholder="Paste your invite token here"
+            value={values.inviteToken}
+            onChange={handleChange}
             disabled={loading}
           />
 

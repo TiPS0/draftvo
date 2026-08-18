@@ -33,6 +33,7 @@ async function getKey(secret: string): Promise<CryptoKey> {
 export interface JwtPayload {
   sub: string;  // user id / email
   name: string;
+  role: string;
   iat: number;
   exp: number;
 }

@@ -25,11 +25,12 @@ export async function POST(request: Request) {
 
     // Sign a frontend JWT — embed user identity from backend response
     const token = await signJwt({
-      sub: data.email ?? body.email,
-      name: data.name ?? "",
+      sub: data.user?.id ?? data.email ?? body.email,
+      name: data.user?.name ?? data.name ?? "",
+      role: data.user?.role ?? "Member",
     });
 
-    const response = NextResponse.json({ ok: true });
+    const response = NextResponse.json({ ok: true, user: data.user });
     response.cookies.set(SESSION_COOKIE, token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
