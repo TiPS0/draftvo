@@ -100,7 +100,7 @@ export function Sidebar({ activePath = "/", userName = "You", userEmail = "", on
       <nav className="flex-1 overflow-y-auto px-2 py-2 flex flex-col gap-0.5">
         {activeTab === 'home' ? (
           <>
-            <SidebarMenuItem href="/" icon={<CheckSquareIcon />} label="My Tasks" activePath={activePath} />
+            <SidebarMenuItem href="/" icon={<CheckSquareIcon />} label="My Drafts" activePath={activePath} />
             <SidebarMenuItem href="/calendar" icon={<CalendarIcon />} label="Calendar" activePath={activePath} />
             <SidebarMenuItem href="/notes" icon={<BookIcon />} label="Notes" activePath={activePath} />
             <SidebarMenuItem href="/contacts" icon={<UsersIcon />} label="Contacts" activePath={activePath} />

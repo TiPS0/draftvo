@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ─────────────────────────────────────────
    Design Tokens — from log-ui.md
    ───────────────────────────────────────── */
@@ -11,9 +13,9 @@
   --color-text-tertiary: #7d7a75;
 
   /* Surfaces */
-  --color-surface-base: #000000;
-  --color-surface-muted: #ffffff;
-  --color-surface-raised: #211b17;
+  --color-surface-base: #ffffff;
+  --color-surface-muted: #f9f9f8;
+  --color-surface-raised: rgba(42, 28, 0, 0.08);
   --color-surface-strong: #2783de;
 
   /* Background / Foreground (Tailwind compat) */
@@ -83,6 +85,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface-base: var(--color-surface-base);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-surface-raised: var(--color-surface-raised);
+  --color-surface-strong: var(--color-surface-strong);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

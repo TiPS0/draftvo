@@ -109,7 +109,7 @@ export function AppLayout({ children, userName = "You", userEmail = "" }: AppLay
         {isCollapsed && (
           <button 
             onClick={() => setIsCollapsed(false)}
-            className="absolute top-4 left-4 z-50 p-1.5 rounded hover:bg-black/5 text-[var(--color-text-secondary)]"
+            className="absolute top-2 left-4 z-[60] p-1.5 rounded hover:bg-black/5 text-[var(--color-text-secondary)]"
             aria-label="Expand Sidebar"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
