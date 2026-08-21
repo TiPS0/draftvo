@@ -36,3 +36,4 @@ Re-run `npx @p_tipso/agentive` any time to re-sync changes to your AI tools.
 ## Architecture Rules
 
 - [.agents/rules/tailwind-v4.md](file:///Users/bb0090/Desktop/Dev/TiPS0/draftvo/.agents/rules/tailwind-v4.md)
+- [.agents/rules/nextjs-16-proxy-convention.md](file:///Users/bb0090/Desktop/Dev/TiPS0/draftvo/.agents/rules/nextjs-16-proxy-convention.md)
