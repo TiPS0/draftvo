@@ -38,7 +38,7 @@ export interface JwtPayload {
   exp: number;
 }
 
-const TOKEN_TTL_SECONDS = 60 * 60 * 24 * 7; // 7 days
+const TOKEN_TTL_SECONDS = 60 * 60 * 24; // 1 day
 
 export async function signJwt(payload: Omit<JwtPayload, "iat" | "exp">): Promise<string> {
   const now = Math.floor(Date.now() / 1000);

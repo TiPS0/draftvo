@@ -21,7 +21,7 @@ export function SettingsModal({ isOpen, onClose, userName = "You" }: SettingsMod
     setIsLoggingOut(true);
     try {
       await fetch('/api/auth/logout', { method: 'POST' });
-      window.location.href = '/login';
+      window.location.replace('/login');
     } catch (error) {
       console.error('Logout error:', error);
       setIsLoggingOut(false);

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { verifyJwt, SESSION_COOKIE } from "@/lib/auth";
+import { verifyJwt, signJwt, SESSION_COOKIE } from "@/lib/auth";
 
 const PUBLIC_PATHS = ["/login", "/register"];
 const API_PREFIX = "/api";
@@ -28,7 +28,9 @@ export async function proxy(request: NextRequest) {
   if (!isAuthenticated && !isPublicPath) {
     // Unauthenticated → redirect to login
     const loginUrl = new URL("/login", request.url);
-    loginUrl.searchParams.set("next", pathname);
+    if (pathname !== "/") {
+      loginUrl.searchParams.set("next", pathname);
+    }
     return NextResponse.redirect(loginUrl);
   }
 
@@ -37,7 +39,33 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+  if (!isPublicPath) {
+    response.headers.set("Cache-Control", "no-store, max-age=0, must-revalidate");
+  }
+
+  // Sliding Session: Refresh token if older than 12 hours
+  if (isAuthenticated && payload) {
+    const now = Math.floor(Date.now() / 1000);
+    const age = now - payload.iat;
+    const TWELVE_HOURS = 60 * 60 * 12;
+
+    if (age > TWELVE_HOURS) {
+      const newToken = await signJwt({
+        sub: payload.sub,
+        name: payload.name,
+        role: payload.role,
+      });
+      response.cookies.set(SESSION_COOKIE, newToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/",
+      });
+    }
+  }
+
+  return response;
 }
 
 export const config = {
