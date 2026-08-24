@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { fetchApi } from "@/lib/api";
 
 interface Invite {
   id: string;
@@ -19,7 +20,7 @@ export default function UsersSettingsPage() {
 
   async function fetchInvites() {
     try {
-      const res = await fetch("/api/invites");
+      const res = await fetchApi("/api/invites");
       const data = await res.json();
       if (!res.ok) {
         setError(data.error || "Failed to load invites");
@@ -41,7 +42,7 @@ export default function UsersSettingsPage() {
     setGenerating(true);
     setError("");
     try {
-      const res = await fetch("/api/invites", { method: "POST" });
+      const res = await fetchApi("/api/invites", { method: "POST" });
       const data = await res.json();
       if (!res.ok) {
         setError(data.error || "Failed to generate invite");

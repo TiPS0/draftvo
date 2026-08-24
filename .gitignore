@@ -16,11 +16,12 @@ Thumbs.db
 .env.local
 .env.*.local
 
-# Build output (Next.js)
+# Build output (Next.js & Desktop)
 .next/
 out/
 build/
 dist/
+desktop/releases/
 
 # Build output (Go)
 backend/backend

@@ -1,23 +1,30 @@
-import { cookies } from "next/headers";
-import { verifyJwt, SESSION_COOKIE } from "@/lib/auth";
+"use client";
+
 import { AppLayout } from "../_components/AppLayout";
-import { redirect } from "next/navigation";
+import { AuthGuard } from "@/components/AuthGuard";
+import { useAuthStore } from "@/store/authStore";
+import { useEffect, useState } from "react";
 
-export default async function MainLayout({ children }: { children: React.ReactNode }) {
-  const cookieStore = await cookies();
-  const token = cookieStore.get(SESSION_COOKIE)?.value ?? "";
-  const payload = token ? await verifyJwt(token) : null;
+export default function MainLayout({ children }: { children: React.ReactNode }) {
+  const user = useAuthStore((state) => state.user);
+  const [mounted, setMounted] = useState(false);
 
-  if (!payload) {
-    redirect("/login");
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const userName = user?.name ?? "User";
+  const userEmail = user?.email ?? "";
+
+  if (!mounted) {
+    return null;
   }
 
-  const userName = payload.name ?? "User";
-  const userEmail = payload.sub ?? "";
-
   return (
-    <AppLayout userName={userName} userEmail={userEmail}>
-      {children}
-    </AppLayout>
+    <AuthGuard>
+      <AppLayout userName={userName} userEmail={userEmail}>
+        {children}
+      </AppLayout>
+    </AuthGuard>
   );
 }

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { AuthForm } from "../_components/AuthForm";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import { fetchApi } from "@/lib/api";
 
 interface FormState {
   name: string;
@@ -78,9 +79,8 @@ export default function RegisterPage() {
     setErrors({});
 
     try {
-      const res = await fetch("/api/auth/register", {
+      const res = await fetchApi("/auth/register", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: values.name,
           email: values.email,

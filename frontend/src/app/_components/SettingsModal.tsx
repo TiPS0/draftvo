@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useAuthStore } from "@/store/authStore";
+import { fetchApi } from "@/lib/api";
 
 interface SettingsModalProps {
   isOpen: boolean;
@@ -20,11 +22,12 @@ export function SettingsModal({ isOpen, onClose, userName = "You" }: SettingsMod
   const handleLogout = async () => {
     setIsLoggingOut(true);
     try {
-      await fetch('/api/auth/logout', { method: 'POST' });
-      window.location.replace('/login');
+      await fetchApi('/auth/logout', { method: 'POST' });
     } catch (error) {
       console.error('Logout error:', error);
-      setIsLoggingOut(false);
+    } finally {
+      useAuthStore.getState().logout();
+      window.location.replace('/login');
     }
   };
 

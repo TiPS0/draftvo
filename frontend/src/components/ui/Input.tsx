@@ -37,7 +37,7 @@ export function Input({
         aria-invalid={error ? "true" : undefined}
         className={[
           "w-full h-10 px-3 rounded-[var(--radius-xs)]",
-          "bg-white text-[var(--color-text-primary)] text-[var(--font-size-md)]",
+          "bg-surface-base text-text-primary text-[var(--font-size-md)]",
           "border transition-all duration-[var(--motion-normal)]",
           error
             ? "border-[#d94e3f] focus:border-[#d94e3f] focus:ring-2 focus:ring-[rgba(217,78,63,0.2)]"

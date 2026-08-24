@@ -1,0 +1,10 @@
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cargo tauri dev",
+    "build:mac": "cargo tauri build && node move-releases.mjs macos",
+    "build:win": "cargo tauri build --target x86_64-pc-windows-msvc && node move-releases.mjs windows"
+  }
+}

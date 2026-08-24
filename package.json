@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "pnpm -r --parallel dev",
+    "start": "pnpm -r --parallel start",
+    "desktop": "pnpm --filter desktop dev",
     "build": "pnpm -r build",
-    "start": "pnpm -r --parallel start"
+    "build:mac": "pnpm --filter desktop build:mac",
+    "build:win": "pnpm --filter desktop build:win"
   },
   "workspaces": [
     "frontend",
-    "backend"
+    "backend",
+    "desktop"
   ]
 }

@@ -68,31 +68,7 @@ export function AppLayout({ children, userName = "You", userEmail = "" }: AppLay
     localStorage.setItem("sidebarCollapsed", isCollapsed.toString());
   }, [isCollapsed]);
 
-  // --- bfcache defence-in-depth ---
-  // When the browser restores this page from the Back-Forward Cache
-  // (e.g. macOS 2-finger swipe-back after logout), `event.persisted` is
-  // true. At that point the session cookie is already gone, so we
-  // re-validate with the server and redirect to /login if needed.
-  useEffect(() => {
-    const handlePageShow = async (event: PageTransitionEvent) => {
-      if (!event.persisted) return;
-      try {
-        const res = await fetch("/api/auth/session", {
-          method: "GET",
-          cache: "no-store",
-        });
-        if (!res.ok) {
-          window.location.replace("/login");
-        }
-      } catch {
-        // Network error — conservatively redirect to login
-        window.location.replace("/login");
-      }
-    };
-
-    window.addEventListener("pageshow", handlePageShow);
-    return () => window.removeEventListener("pageshow", handlePageShow);
-  }, []);
+  // bfcache defence-in-depth is handled by AuthGuard now.
 
   return (
     <div className="flex h-screen overflow-hidden">

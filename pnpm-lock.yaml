@@ -10,6 +10,8 @@ importers:
 
   backend: {}
 
+  desktop: {}
+
   frontend:
     dependencies:
       next:

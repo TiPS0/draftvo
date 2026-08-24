@@ -6,6 +6,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { AuthForm } from "../_components/AuthForm";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import { fetchApi } from "@/lib/api";
+import { useAuthStore } from "@/store/authStore";
 
 interface FormState {
   email: string;
@@ -67,9 +69,8 @@ function LoginForm() {
     setErrors({});
 
     try {
-      const res = await fetch("/api/auth/login", {
+      const res = await fetchApi("/auth/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
 
@@ -81,6 +82,17 @@ function LoginForm() {
       }
 
       localStorage.setItem("lastLoginEmail", values.email);
+
+      // Authenticate in client store
+      const user = data.user || {
+        id: values.email,
+        email: values.email,
+        name: values.email,
+        role: "Member"
+      };
+      // Use a dummy token or grab from backend if provided
+      const token = data.token || "client-auth-token";
+      useAuthStore.getState().login(user, token);
 
       router.replace("/");
       router.refresh();
